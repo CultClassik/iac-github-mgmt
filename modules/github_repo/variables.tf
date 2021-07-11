@@ -1,15 +1,15 @@
-variable "private" {
-    description = "True or False"
-    type = string
-    default = false
+variable "visibility" {
+  description = "public or private"
+  type        = string
+  default     = "public"
 }
 
 variable "repo_name" {
-    description = "Name of repository to create"
-    type = string
+  description = "Name of repository to create"
+  type        = string
 }
 
 variable "repo_desc" {
-    description = "Description of repository to create"
-    type = string
+  description = "Description of repository to create"
+  type        = string
 }

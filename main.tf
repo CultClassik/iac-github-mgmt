@@ -2,8 +2,18 @@ provider "github" {
   #token = var.github_token
 }
 
-module "azdo_terraform_pipeline_templates" {
-  source    = "./modules/github_repo"
-  repo_name = "azdo-terraform-pipeline-templates"
-  repo_desc = "Azure Pipelines template repo for Terraform pipelines"
+data "terraform_remote_state" "tfcloud" {
+  backend = "remote"
+
+  config = {
+    organization = "Diehlabs"
+    workspaces = {
+      name = "tfcloud-mgmt"
+    }
+  }
+}
+
+resource "github_user_ssh_key" "ssh_key_cultclassik" {
+  title = "cultclassik"
+  key   = data.terraform_remote_state.tfcloud.outputs.ssh_key_cultclassik.public_key_openssh
 }
