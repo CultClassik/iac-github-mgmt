@@ -1,0 +1,32 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - "*"
+  paths:
+    exclude:
+    - README.md
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Diehlabs/azdo-terraform-templates
+      ref: refs/heads/main
+      #ref: feature/add-ws-url-param
+       
+stages:
+- template: stage-terraform-plan.yml@templates
+  parameters:
+    stages:
+      - stage: 
+        workspace: azdo-mgmt
+        variablesFile: azure-variables.yml
+
+- template: stage-terraform-apply.yml@templates
+  parameters:
+    stages:
+      - stage: 
+        workspace: azdo-mgmt
+        variablesFile: azure-variables.yml
+        azdoApprovalEnvironment: production
