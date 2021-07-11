@@ -1,0 +1,11 @@
+variables:
+  - group: terraform-cloud
+  - group: github
+  # - name: terrascan_version
+  #   value: 1.8.0
+  # - name: tflint_version
+  #   value: 0.30.0
+  # - name: TFLINT_LOG
+  #   value: debug tflint
+  - name: tf_cli_version
+    value: 1.0.2
