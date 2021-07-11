@@ -14,7 +14,6 @@ resources:
       endpoint: "Github - Azure Pipelines"
       name: CultClassik/azdo-terraform-pipeline-templates
       ref: refs/heads/main
-      #ref: feature/add-ws-url-param
        
 stages:
 - template: stage-terraform-plan.yml@templates
