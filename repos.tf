@@ -15,7 +15,7 @@ locals {
 }
 
 resource "github_actions_secret" "tf_api_token" {
-  for_each        = locals.repos.tf_module
+  for_each        = local.repos.tf_module
   repository      = each.key
   secret_name     = "TF_API_TOKEN"
   plaintext_value = var.tfe_token
