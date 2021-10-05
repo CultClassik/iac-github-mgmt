@@ -4,7 +4,6 @@ provider "github" {
 
 data "terraform_remote_state" "tfcloud" {
   backend = "remote"
-
   config = {
     organization = "Diehlabs"
     workspaces = {
