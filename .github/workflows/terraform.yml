@@ -1,0 +1,46 @@
+name: Terraform Module Build
+on: [push, pull_request]
+env:
+  TF_API_TOKEN: ""
+  TF_VERSION: 
+jobs:
+  # tflint:
+  terrascan:
+    runs-on: ubuntu-latest
+    name: Terrascan
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      # https://github.com/marketplace/actions/terrascan-iac-scanner
+    - name: Run Terrascan
+      id: terrascan
+      uses: accurics/terrascan-action@main
+      with:
+        iac_type: 'terraform'
+        iac_version: 'v14'
+        policy_type: 'azure'
+        only_warn: true
+        verbose: true 
+        sarif_upload: true
+        #non_recursive:
+        iac_dir: /
+        #policy_path:
+        #skip_rules:
+        #config_path:
+        #find_vulnerabilities:
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: terrascan.sarif
+
+  terraform_plan:
+    runs-on: ubuntu-latest
+    name: Terraform Plan
+    steps:
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 0.12.25
+
+
+
+  # tag_repo:
