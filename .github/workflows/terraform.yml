@@ -54,6 +54,8 @@ jobs:
         tokenPrefix: '$('
         tokenSuffix: ')'
         files: '["**/*.template"]'
+    - name: Rename vars file
+      run: mv terraform.auto.tfvars.template terraform.auto.tfvars
     - name: Terraform Plan
       id: plan
       run: terraform plan -no-color -var 'tfe_token=${{ env.TF_API_TOKEN }}'
