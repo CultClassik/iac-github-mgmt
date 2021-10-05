@@ -45,10 +45,15 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: ${{ env.TF_VERSION }}
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+        cli_config_credentials_token: ${{ env.TF_API_TOKEN }}
     - name: Terrform Init
       id: tf_init
       run: terraform init
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '$('
+        tokenSuffix: ')'
+        files: '["**/*.template"]'
     - name: Terraform Plan
       id: plan
       run: terraform plan -no-color
