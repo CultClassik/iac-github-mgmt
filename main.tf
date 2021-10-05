@@ -30,3 +30,11 @@ resource "github_actions_secret" "iac_github_mgmt_tftoken" {
   secret_name     = "TF_API_TOKEN"
   plaintext_value = var.tfe_token
 }
+
+# terraform import tfe_workspace.iac_github_mgmt ws-MyypkggTqKQ9xbSY
+resource "tfe_workspace" "iac_github_mgmt" {
+  name           = module.iac_github_mgmt.repo_name
+  organization   = "Diehlabs"
+  tag_names      = ["test", "app"]
+  execution_mode = "local"
+}
