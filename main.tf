@@ -1,5 +1,5 @@
 provider "github" {
-  #token = var.github_token
+  token = var.github_token
 }
 
 data "terraform_remote_state" "tfcloud" {
@@ -31,6 +31,7 @@ resource "github_actions_secret" "iac_github_mgmt_tftoken" {
 }
 
 # terraform import tfe_workspace.iac_github_mgmt ws-MyypkggTqKQ9xbSY
+# terraform state rm tfe_workspace.iac_github_mgmt
 resource "tfe_workspace" "iac_github_mgmt" {
   name           = module.iac_github_mgmt.repo_name
   organization   = "Diehlabs"
