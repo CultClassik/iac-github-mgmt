@@ -58,7 +58,7 @@ jobs:
       run: mv terraform.auto.tfvars.template terraform.auto.tfvars
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color -var 'tfe_token=${{ env.TF_API_TOKEN }}'
+      run: terraform plan -no-color
     - run: echo ${{ steps.plan.outputs.stdout }}
     - run: echo ${{ steps.plan.outputs.stderr }}
     - run: echo ${{ steps.plan.outputs.exitcode }}
