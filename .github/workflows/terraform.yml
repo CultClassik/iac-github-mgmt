@@ -1,8 +1,11 @@
 name: Terraform Module Build
 on: [push, pull_request]
+defaults:
+  run:
+    working-directory: ${{ env.GITHUB_WORKSPACE }}
 env:
   TF_API_TOKEN: ""
-  TF_VERSION: "1.0.8"
+  TF_VERSION: "~1.0"
 jobs:
   # tflint:
   terrascan:
@@ -40,11 +43,14 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: ${{ env.TF_VERSION }}
-    - run: terraform init
-    - id: plan
-      run: terraform plan -no-color
-    - run: echo ${{ steps.plan.outputs.stdout }}
-    - run: echo ${{ steps.plan.outputs.stderr }}
-    - run: echo ${{ steps.plan.outputs.exitcode }}
+    - name: Terrform Init
+      id: tf_init
+      run: terraform init
+      
+    # - id: plan
+    #   run: terraform plan -no-color
+    # - run: echo ${{ steps.plan.outputs.stdout }}
+    # - run: echo ${{ steps.plan.outputs.stderr }}
+    # - run: echo ${{ steps.plan.outputs.exitcode }}
 
   # tag_repo:
