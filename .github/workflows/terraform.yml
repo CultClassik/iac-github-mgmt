@@ -45,6 +45,7 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: ${{ env.TF_VERSION }}
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
     - name: Terrform Init
       id: tf_init
       run: terraform init
