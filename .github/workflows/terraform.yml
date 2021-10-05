@@ -49,16 +49,16 @@ jobs:
     - name: Terrform Init
       id: tf_init
       run: terraform init
-    - uses: cschleiden/replace-tokens@v1
-      with:
-        tokenPrefix: '$('
-        tokenSuffix: ')'
-        files: '["**/*.template"]'
-    - name: Rename vars file
-      run: mv terraform.auto.tfvars.template terraform.auto.tfvars
+    # - uses: cschleiden/replace-tokens@v1
+    #   with:
+    #     tokenPrefix: '$('
+    #     tokenSuffix: ')'
+    #     files: '["**/*.template"]'
+    # - name: Rename vars file
+    #   run: mv terraform.auto.tfvars.template terraform.auto.tfvars
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color
+      run: terraform plan -no-color -var 'tfe_token=${{ secrets.TF_API_TOKEN }}'
     - run: echo ${{ steps.plan.outputs.stdout }}
     - run: echo ${{ steps.plan.outputs.stderr }}
     - run: echo ${{ steps.plan.outputs.exitcode }}
