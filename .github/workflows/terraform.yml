@@ -39,7 +39,7 @@ jobs:
     steps:
     - uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: ${TF_VERSION}
+        terraform_version: ${{ env.TF_VERSION }}
     - run: terraform init
     - id: plan
       run: terraform plan -no-color
