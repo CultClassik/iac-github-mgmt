@@ -12,7 +12,7 @@ data "terraform_remote_state" "tfcloud" {
     organization = "Diehlabs"
     workspaces = {
       name = "tfcloud-mgmt"
-    }
+       }
   }
 }
 
