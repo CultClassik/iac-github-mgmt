@@ -7,9 +7,9 @@ locals {
     }
     iac = {
       #iac-github-mgmt = "Manages Github resources"
+      "iac-aws-resources" = "Terraform code to manage AWS resources"
     }
     misc_projects = {
-      iac-tkg = "Scripts etc for TKG"
     }
   }
 }
