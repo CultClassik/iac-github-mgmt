@@ -9,6 +9,9 @@ locals {
       #iac-github-mgmt = "Manages Github resources"
       "iac-aws-resources" = "Terraform code to manage AWS resources"
     }
+    ansible_roles = {
+      ansible-role-terraform = "Ansible role for managing Terraform and related tooling"
+    }
     misc_projects = {
     }
   }

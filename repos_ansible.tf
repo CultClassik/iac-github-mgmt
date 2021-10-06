@@ -8,10 +8,12 @@ module "ansible_control" {
 ####################################
 # Ansible ROLE repositories
 ####################################
-module "ansible_role_terraform" {
+# terraform import "module.ansible_roles[\"ansible-role-terraform\"].github_repository.repo" ansible-role-terraform
+module "ansible_roles" {
   source    = "./modules/github_repo"
-  repo_name = "ansible-role-terraform"
-  repo_desc = "Ansible role for managing Terraform and related tooling"
+  for_each = local.repos.ansible_roles
+  repo_name = each.key
+  repo_desc = each.value
 }
 
 module "ansible_role_git" {
