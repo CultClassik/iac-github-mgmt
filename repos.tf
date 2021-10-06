@@ -1,38 +1,27 @@
-# azure pipelines templates for terraform
-module "azdo_terraform_pipeline_templates" {
-  source    = "./modules/github_repo"
-  repo_name = "azdo-terraform-pipeline-templates"
-  repo_desc = "Azure Pipelines template repo for Terraform pipelines"
-}
-
-# TF Modules
-module "terraform_module_repos" {
-  for_each  = local.repos.tf_module
-  source    = "./modules/github_repo"
-  repo_name = each.key
-  repo_desc = each.value
-}
-
-# iac repos
-module "iac_repos" {
-  for_each  = local.repos.iac
-  source    = "./modules/github_repo"
-  repo_name = each.key
-  repo_desc = each.value
-}
-
-# iac repo secrets
-resource "github_actions_secret" "tf_api_token" {
-  for_each        = merge(local.repos.tf_module, local.repos.iac)
-  repository      = each.key
-  secret_name     = "TF_API_TOKEN"
-  plaintext_value = var.tfe_token
-}
-
-# Misc projects
-module "misc_project_repos" {
-  for_each  = local.repos.misc_projects
-  source    = "./modules/github_repo"
-  repo_name = each.key
-  repo_desc = each.value
+locals {
+  repos = {
+    tf_module = {
+      terraform-module-scaffolding = "Base repo for a new Terraform module"
+      terraform-azurerm-o365dns      = "Terraform module for creating DNS records in Azure DNS for Office 365"
+      
+    }
+    iac = {
+      #iac-github-mgmt = "Manages Github resources" # this is managed on it's own in main.tf, since it's this actual repo
+      #"iac-aws-resources" = "Terraform code to manage AWS resources"
+      iac-azure-resources = "Terraform code to manage Azure resources"
+    }
+    ansible_roles = {
+      ansible-role-terraform        = "Ansible role for managing Terraform and related tooling"
+      ansible-role-git              = "Ansible role for managing Git client tooling"
+      ansible-role-vagrant          = "Ansible role for managing Vagrant"
+      ansible-role-zsh              = "Ansible role for managing zsh"
+      ansible-role-cryptominer      = "Ansible role for managing cryptominer"
+      ansible-role-docker           = "Ansible role for managing Docker"
+      ansible-role-kubetools        = "Ansible role for managing Kubernetes client tooling"
+      ansible-role-k8s-certificates = "Ansible role for managing k8s-certificates"
+      ansible-role-k8s-node         = "Ansible role for managing Kubernetes nodes"
+    }
+    misc_projects = {
+    }
+  }
 }
