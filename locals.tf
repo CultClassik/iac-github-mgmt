@@ -2,12 +2,13 @@ locals {
   repos = {
     tf_module = {
       terraform-module-scaffolding = "Base repo for a new Terraform module"
-      #terraform-azurerm-o365dns      = "Terraform module for creating DNS records in Azure DNS for Office 365"
-      #terraform-azurerm-github-repos = "Terraform module for creating Github repos"
+      terraform-azurerm-o365dns      = "Terraform module for creating DNS records in Azure DNS for Office 365"
+      
     }
     iac = {
       #iac-github-mgmt = "Manages Github resources" # this is managed on it's own in main.tf, since it's this actual repo
       #"iac-aws-resources" = "Terraform code to manage AWS resources"
+      #iac-azure-resources = "Terraform code to manage Azure resources"
     }
     ansible_roles = {
       ansible-role-terraform        = "Ansible role for managing Terraform and related tooling"

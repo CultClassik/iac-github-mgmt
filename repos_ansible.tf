@@ -15,10 +15,3 @@ module "ansible_roles" {
   repo_name = each.key
   repo_desc = each.value
 }
-
-
-# repo is empty, removing it for now
-# module "ansible_role_k8s-node" {
-#   source    = "./modules/github_repo"
-#   repo_name = "
-# }
