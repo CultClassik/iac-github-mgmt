@@ -15,11 +15,11 @@ resource "github_actions_secret" "tf_api_token" {
 }
 
 # terraform cloud workspaces
-# resource "tfe_workspace" "workspaces" {
-#   for_each       = local.repos.iac
-#   name           = each.key
-#   description    = "${each.value} - Managed by Terraform"
-#   organization   = "Diehlabs"
-#   execution_mode = "local"
-#   tag_names      = ["prod"]
-# }
+resource "tfe_workspace" "iac_ws" {
+  for_each       = local.repos.iac
+  name           = each.key
+  description    = "${each.value} - Managed by Terraform"
+  organization   = "Diehlabs"
+  execution_mode = "local"
+  tag_names      = ["prod"]
+}

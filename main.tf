@@ -2,6 +2,10 @@ provider "github" {
   token = var.github_token
 }
 
+provider "tfe" {
+  token = var.tfe_token
+}
+
 data "terraform_remote_state" "tfcloud" {
   backend = "remote"
   config = {
