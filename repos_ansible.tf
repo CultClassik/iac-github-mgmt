@@ -17,23 +17,8 @@ module "ansible_roles" {
 }
 
 
-##
-## Kuberenetes Specific
-##
-module "ansible_role_kubetools" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-kubetools"
-  repo_desc = "Ansible role for managing Kubernetes client tooling"
-}
-
-module "ansible_role_k8s-certificates" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-k8s-certificates"
-  repo_desc = "Ansible role for managing k8s-certificates"
-}
-
-module "ansible_role_k8s-node" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-k8s-node"
-  repo_desc = "Ansible role for managing Kubernetes nodes"
-}
+# repo is empty, removing it for now
+# module "ansible_role_k8s-node" {
+#   source    = "./modules/github_repo"
+#   repo_name = "
+# }
