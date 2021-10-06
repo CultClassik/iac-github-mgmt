@@ -72,4 +72,4 @@ jobs:
     - name: Terraform Apply
       id: apply
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve
+      run: terraform apply -auto-approve  -var 'tfe_token=${{ secrets.TF_API_TOKEN }}'
