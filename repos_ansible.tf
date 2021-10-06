@@ -8,43 +8,14 @@ module "ansible_control" {
 ####################################
 # Ansible ROLE repositories
 ####################################
-# terraform import "module.ansible_roles[\"ansible-role-terraform\"].github_repository.repo" ansible-role-terraform
+
 module "ansible_roles" {
   source    = "./modules/github_repo"
-  for_each = local.repos.ansible_roles
+  for_each  = local.repos.ansible_roles
   repo_name = each.key
   repo_desc = each.value
 }
 
-module "ansible_role_git" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-git"
-  repo_desc = "Ansible role for managing Git client tooling"
-}
-
-module "ansible_role_zsh" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-zsh"
-  repo_desc = "Ansible role for managing zsh"
-}
-
-module "ansible_role_cryptominer" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-cryptominer"
-  repo_desc = "Ansible role for managing cryptominer"
-}
-
-module "ansible_role_docker" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-docker"
-  repo_desc = "Ansible role for managing Docker"
-}
-
-module "ansible_role_vagrant" {
-  source    = "./modules/github_repo"
-  repo_name = "ansible-role-vagrant"
-  repo_desc = "Ansible role for managing Vagrant"
-}
 
 ##
 ## Kuberenetes Specific
