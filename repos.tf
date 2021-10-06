@@ -21,12 +21,22 @@ module "iac_repos" {
   repo_desc = each.value
 }
 
-# iac repo secrets
+# iac and tf module repo secrets
 resource "github_actions_secret" "tf_api_token" {
   for_each        = merge(local.repos.tf_module, local.repos.iac)
   repository      = each.key
   secret_name     = "TF_API_TOKEN"
   plaintext_value = var.tfe_token
+}
+
+# iac repo workspaces
+resource "tfe_workspace" "iac_repos" {
+  for_each       = local.repos.iac
+  name           = each.key
+  description    = each.value
+  organization   = "Diehlabs"
+  tag_names      = ["prod"]
+  execution_mode = "local"
 }
 
 # Misc projects
