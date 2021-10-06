@@ -5,15 +5,15 @@ resource "github_repository" "repo" {
   auto_init = true # need to do this to ensure we can set the main branch as default below
 }
 
-resource "github_branch" "main" {
+data "github_branch" "main" {
+  depends_on = [
+    github_repository.repo
+  ]
   repository = github_repository.repo.name
   branch     = "main"
 }
 
 resource "github_branch_default" "default" {
-  depends_on = [
-    github_branch.main
-  ]
   repository = github_repository.repo.name
-  branch     = github_branch.main.branch
+  branch     = data.github_branch.main.branch
 }
