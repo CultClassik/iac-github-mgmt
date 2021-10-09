@@ -14,19 +14,19 @@ resources:
       endpoint: "Github - Azure Pipelines"
       name: CultClassik/azdo-terraform-pipeline-templates
       ref: refs/heads/main
-       
+
 stages:
 - template: stage-terraform-plan.yml@templates
   parameters:
     stages:
-      - stage: 
+      - stage:
         workspace: azdo-mgmt
         variablesFile: azure-variables.yml
 
 - template: stage-terraform-apply.yml@templates
   parameters:
     stages:
-      - stage: 
+      - stage:
         workspace: azdo-mgmt
         variablesFile: azure-variables.yml
         azdoApprovalEnvironment: production
