@@ -23,23 +23,26 @@ jobs:
       with:
         terraform_version: ${{ env.TF_VERSION }}
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
     - name: Terrform Init
       id: tf_init
       run: terraform init
+      # if: github.event_name == 'push' && github.ref != 'refs/heads/main'
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color -out=${{ github.workspace }}/tf.plan
+      run: terraform plan -no-color # -out=${{ github.workspace }}/tf.plan
+      # if: github.event_name == 'push' && github.ref != 'refs/heads/main'
 
     # - run: echo ${{ steps.plan.outputs.stdout }}
     # - run: echo ${{ steps.plan.outputs.stderr }}
     # - run: echo ${{ steps.plan.outputs.exitcode }}
 
-    - uses: actions/upload-artifact@v2
-      if: github.event_name == 'pull_request'
-      with:
-        name: terraform-plan
-        path: ${{ github.workspace }}/tf.plan
+    # - uses: actions/upload-artifact@v2
+    #   if: github.event_name == 'pull_request'
+    #   with:
+    #     name: terraform-plan
+    #     path: ${{ github.workspace }}/tf.plan
 
     - name: Inspect plan results
       id: inspect
@@ -72,13 +75,13 @@ jobs:
             body: output
           })
 
-    - uses: actions/download-artifact@v2
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      with:
-        name: terraform-plan
-        path: ${{ github.workspace }}/tf.plan
+    # - uses: actions/download-artifact@v2
+    #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    #   with:
+    #     name: terraform-plan
+    #     path: ${{ github.workspace }}/tf.plan
 
     - name: Terraform Apply
       id: apply
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve ${{ github.workspace }}/tf.plan
+      run: terraform apply -auto-approve # ${{ github.workspace }}/tf.plan
