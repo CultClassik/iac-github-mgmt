@@ -28,12 +28,32 @@ resource "github_user_ssh_key" "ssh_key_cultclassik" {
   key   = data.terraform_remote_state.tfcloud.outputs.ssh_key_cultclassik.public_key_openssh
 }
 
+###############
+# THIS REPO > #
+###############
 module "iac_github_mgmt" {
   source    = "./modules/github_repo"
   repo_name = "iac-github-mgmt"
   repo_desc = "Manages Github resources"
 }
 
+resource "github_actions_secret" "iac_github_mgmt_tftoken" {
+  repository      = module.iac_github_mgmt.repo_name
+  secret_name     = "TF_API_TOKEN"
+  plaintext_value = var.tfe_token
+}
+
+resource "tfe_workspace" "iac_github_mgmt" {
+  name           = module.iac_github_mgmt.repo_name
+  organization   = "Diehlabs"
+  tag_names      = ["Production", "Github"]
+  execution_mode = "local"
+}
+###############
+# < THIS REPO #
+###############
+
+# shared and template workflows
 module "github_action_templates" {
   providers = {
     github = github.diehlabs
@@ -41,20 +61,4 @@ module "github_action_templates" {
   source    = "./modules/github_repo"
   repo_name = ".github"
   repo_desc = "Github Workflow Templates"
-}
-
-# iac repo secrets
-# resource "github_actions_secret" "iac_github_mgmt_tftoken" {
-#   repository      = module.iac_github_mgmt.repo_name
-#   secret_name     = "TF_API_TOKEN"
-#   plaintext_value = var.tfe_token
-# }
-
-# terraform import tfe_workspace.iac_github_mgmt ws-MyypkggTqKQ9xbSY
-# terraform state rm tfe_workspace.iac_github_mgmt
-resource "tfe_workspace" "iac_github_mgmt" {
-  name           = module.iac_github_mgmt.repo_name
-  organization   = "Diehlabs"
-  tag_names      = ["test", "app"]
-  execution_mode = "local"
 }
