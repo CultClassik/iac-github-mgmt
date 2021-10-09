@@ -10,4 +10,4 @@ on:
 
 jobs:
   terraform:
-    uses: Diehlabs/.github/blob/main/workflows/terraform-local.yml@v0.0.3
+    uses: Diehlabs/.github/workflows/terraform-local.yml@v0.0.3
