@@ -34,6 +34,7 @@ Two secrets must be set in the repository:
 | <a name="module_azdo_terraform_pipeline_templates"></a> [azdo\_terraform\_pipeline\_templates](#module\_azdo\_terraform\_pipeline\_templates) | ./modules/github_repo | n/a |
 | <a name="module_diehlabs_iac_repos"></a> [diehlabs\_iac\_repos](#module\_diehlabs\_iac\_repos) | ./modules/github_repo | n/a |
 | <a name="module_diehlabs_terraform_module_repos"></a> [diehlabs\_terraform\_module\_repos](#module\_diehlabs\_terraform\_module\_repos) | ./modules/github_repo | n/a |
+| <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | ./modules/github_repo | n/a |
 | <a name="module_iac_github_mgmt"></a> [iac\_github\_mgmt](#module\_iac\_github\_mgmt) | ./modules/github_repo | n/a |
 | <a name="module_iac_repos"></a> [iac\_repos](#module\_iac\_repos) | ./modules/github_repo | n/a |
 | <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | ./modules/github_repo | n/a |

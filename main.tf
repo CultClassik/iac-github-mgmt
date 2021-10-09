@@ -31,7 +31,13 @@ resource "github_user_ssh_key" "ssh_key_cultclassik" {
 module "iac_github_mgmt" {
   source    = "./modules/github_repo"
   repo_name = "iac-github-mgmt"
-  repo_desc = "Manages Github resources"
+  repo_desc = "Manages Github resources - Repo Managed by Terraform"
+}
+
+module "github_action_templates" {
+  source    = "./modules/github_repo"
+  repo_name = ".github"
+  repo_desc = "Github Workflow Templates - Repo Managed by Terraform"
 }
 
 # iac repo secrets
