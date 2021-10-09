@@ -1,0 +1,13 @@
+name: Terraform Configuration Run
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    uses: https://github.com/Diehlabs/.github/blob/main/workflow-templates/terraform-local.yml@v0.0.2
