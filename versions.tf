@@ -12,7 +12,7 @@ terraform {
       version = "~> 4.15.0"
     }
     tfe = {
-      source = "hashicorp/tfe"
+      source  = "hashicorp/tfe"
       version = "~> 0.26.0"
     }
   }

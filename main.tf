@@ -1,5 +1,12 @@
 provider "github" {
-  token = var.github_token
+  token = data.terraform_remote_state.tfcloud.outputs.github_token
+  #owner = "Diehlabs"
+}
+
+provider "github" {
+  alias = "diehlabs"
+  owner = "Diehlabs"
+  token = data.terraform_remote_state.tfcloud.outputs.github_token
 }
 
 provider "tfe" {
@@ -12,7 +19,7 @@ data "terraform_remote_state" "tfcloud" {
     organization = "Diehlabs"
     workspaces = {
       name = "tfcloud-mgmt"
-       }
+    }
   }
 }
 

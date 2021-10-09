@@ -1,9 +1,20 @@
-# iac repos
+# iac repos - personal
 module "iac_repos" {
   for_each  = local.repos.iac
   source    = "./modules/github_repo"
   repo_name = each.key
-  repo_desc = each.value
+  repo_desc = each.value.desc
+}
+
+# iac repos - diehlabs org
+module "diehlabs_iac_repos" {
+  providers = {
+    github = github.diehlabs
+  }
+  for_each  = local.diehlabs.repos.iac
+  source    = "./modules/github_repo"
+  repo_name = each.key
+  repo_desc = each.value.desc
 }
 
 # iac repo secrets
@@ -18,8 +29,8 @@ resource "github_actions_secret" "tf_api_token" {
 resource "tfe_workspace" "iac_ws" {
   for_each       = local.repos.iac
   name           = each.key
-  description    = "${each.value} - Managed by Terraform"
+  description    = "${each.value.desc} - Managed by Terraform"
   organization   = "Diehlabs"
-  execution_mode = "local"
+  execution_mode = each.value.exec
   tag_names      = ["prod"]
 }

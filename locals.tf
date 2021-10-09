@@ -1,14 +1,26 @@
 locals {
+  tf_version_default = "1.0.8"
+  #github_token =  data.terraform_remote_state.tfcloud.outputs.github_token
+  #tf_org_tokem = data.terraform_remote_state.tfcloud.outputs.tf_org_token
+  diehlabs = {
+    repos = {
+      tf_module = {
+        terraform-azurerm-o365dns = "Terraform module for creating DNS records in Azure DNS for Office 365"
+      }
+      iac = {}
+    }
+  }
   repos = {
     tf_module = {
       terraform-module-scaffolding = "Base repo for a new Terraform module"
-      terraform-azurerm-o365dns      = "Terraform module for creating DNS records in Azure DNS for Office 365"
-      
     }
     iac = {
       #iac-github-mgmt = "Manages Github resources" # this is managed on it's own in main.tf, since it's this actual repo
       #"iac-aws-resources" = "Terraform code to manage AWS resources"
-      iac-azure-resources = "Terraform code to manage Azure resources"
+      iac-azure-resources = {
+        desc = "Terraform code to manage Azure resources",
+        exec = "local"
+      }
     }
     ansible_roles = {
       ansible-role-terraform        = "Ansible role for managing Terraform and related tooling"
