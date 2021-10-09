@@ -43,21 +43,12 @@ module "github_action_templates" {
   repo_desc = "Github Workflow Templates"
 }
 
-module "github_shared_workflows" {
-  providers = {
-    github = github.diehlabs
-  }
-  source    = "./modules/github_repo"
-  repo_name = "shared-workflows"
-  repo_desc = "Github Shared Workflows"
-}
-
 # iac repo secrets
-resource "github_actions_secret" "iac_github_mgmt_tftoken" {
-  repository      = module.iac_github_mgmt.repo_name
-  secret_name     = "TF_API_TOKEN"
-  plaintext_value = var.tfe_token
-}
+# resource "github_actions_secret" "iac_github_mgmt_tftoken" {
+#   repository      = module.iac_github_mgmt.repo_name
+#   secret_name     = "TF_API_TOKEN"
+#   plaintext_value = var.tfe_token
+# }
 
 # terraform import tfe_workspace.iac_github_mgmt ws-MyypkggTqKQ9xbSY
 # terraform state rm tfe_workspace.iac_github_mgmt
