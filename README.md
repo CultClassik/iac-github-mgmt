@@ -46,6 +46,7 @@ Two secrets must be set in the repository:
 |------|------|
 | [github_actions_secret.iac_github_mgmt_tftoken](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_actions_secret.tf_api_token](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
+| [github_user_ssh_key.ssh_key_ansible](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/user_ssh_key) | resource |
 | [github_user_ssh_key.ssh_key_cultclassik](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/user_ssh_key) | resource |
 | [tfe_workspace.iac_github_mgmt](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.iac_ws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |

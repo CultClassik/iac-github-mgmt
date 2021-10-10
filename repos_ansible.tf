@@ -11,7 +11,7 @@ module "ansible_control" {
 
 module "ansible_roles" {
   source    = "./modules/github_repo"
-  for_each  = local.repos.ansible_roles
+  for_each  = local.cultclassik.repos.ansible_roles
   repo_name = each.key
   repo_desc = each.value
 }
