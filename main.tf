@@ -41,7 +41,7 @@ resource "github_actions_secret" "iac_github_mgmt_tftoken" {
 resource "tfe_workspace" "iac_github_mgmt" {
   name           = module.iac_github_mgmt.repo_name
   organization   = "Diehlabs"
-  tag_names      = ["Production", "Github"]
+  tag_names      = ["production", "github"]
   execution_mode = "local"
 }
 ###############

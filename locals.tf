@@ -8,6 +8,9 @@ locals {
         terraform-azurerm-o365dns = "Terraform module for creating DNS records in Azure DNS for Office 365"
       }
       iac = {}
+      ansible_roles = {
+        ansible-role-git = "Ansible role for managing Git client tooling"
+      }
     }
   }
   cultclassik = {
