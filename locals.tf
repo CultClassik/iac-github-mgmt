@@ -28,7 +28,6 @@ locals {
       }
       ansible_roles = {
         ansible-role-terraform        = "Ansible role for managing Terraform and related tooling"
-        ansible-role-git              = "Ansible role for managing Git client tooling"
         ansible-role-vagrant          = "Ansible role for managing Vagrant"
         ansible-role-zsh              = "Ansible role for managing zsh"
         ansible-role-cryptominer      = "Ansible role for managing cryptominer"
