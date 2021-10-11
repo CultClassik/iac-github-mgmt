@@ -9,7 +9,9 @@ locals {
       }
       iac = {}
       ansible_roles = {
-        ansible-role-git = "Ansible role for managing Git client tooling"
+        ansible-role-git       = "Ansible role for managing Git client tooling"
+        ansible-role-terraform = "Ansible role for managing Terraform and related tooling"
+        ansible-role-terminal  = "Ansible role for managing terminal and shell configs"
       }
     }
   }
