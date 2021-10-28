@@ -14,7 +14,10 @@ variable "repo_desc" {
   type        = string
 }
 
-variable "is_template" {
-  description = "Set to true to tell GitHub that this is a template repository."
-  default     = false
+variable "template" {
+  description = "Repo to use as a template"
+  type = object({
+    owner     = string
+    repo_name = string
+  })
 }

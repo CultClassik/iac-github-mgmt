@@ -19,7 +19,7 @@ module "diehlabs_iac_repos" {
 
 # iac repo secrets
 resource "github_actions_secret" "tf_api_token" {
-  for_each        = merge(local.cultclassik.repos.tf_module, local.cultclassik.repos.iac)
+  for_each        = local.cultclassik.repos.iac
   repository      = each.key
   secret_name     = "TF_API_TOKEN"
   plaintext_value = var.tfe_token
