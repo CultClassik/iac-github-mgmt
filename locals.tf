@@ -6,6 +6,7 @@ locals {
     repos = {
       tf_module = {
         terraform-azurerm-o365dns = "Terraform module for creating DNS records in Azure DNS for Office 365"
+        terraform-azurerm-linuxvm = "Terraform module for a basic Azure Linux VM"
       }
       iac = {}
       ansible_roles = {
