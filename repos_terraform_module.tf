@@ -10,8 +10,9 @@ module "diehlabs_terraform_module_repos" {
   providers = {
     github = github.diehlabs
   }
-  for_each  = local.diehlabs.repos.tf_module
-  source    = "./modules/github_repo"
-  repo_name = each.key
-  repo_desc = each.value
+  for_each    = local.diehlabs.repos.tf_module
+  source      = "./modules/github_repo"
+  repo_name   = each.key
+  repo_desc   = each.value.desc
+  is_template = try(each.value.is_template, true)
 }

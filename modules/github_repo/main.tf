@@ -3,6 +3,7 @@ resource "github_repository" "repo" {
   description = "${var.repo_desc} - Repo managed by Terraform"
   visibility  = var.visibility
   auto_init   = true # need to do this to ensure we can set the main branch as default below
+  is_template = var.is_template
 }
 
 data "github_branch" "main" {

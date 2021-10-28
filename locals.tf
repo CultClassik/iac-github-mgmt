@@ -5,16 +5,22 @@ locals {
   diehlabs = {
     repos = {
       tf_module = {
-        terraform-azurerm-o365dns = "Terraform module for creating DNS records in Azure DNS for Office 365"
-        terraform-azurerm-linuxvm = "Terraform module for a basic Azure Linux VM"
+        terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
+        terraform-azurerm-linuxvm = {
+          desc        = "Terraform module for a basic Azure Linux VM"
+          is_template = true
+        }
       }
       iac = {}
       ansible_roles = {
-        ansible-role-scaffolding = "Base repo for a new Ansible role"
-        ansible-role-git         = "Ansible role for managing Git client tooling"
-        ansible-role-terraform   = "Ansible role for managing Terraform and related tooling"
-        ansible-role-kubetools   = "Ansible role for managing Kubernetes client tooling"
-        ansible-role-docker      = "Ansible role for managing Docker"
+        ansible-role-scaffolding = {
+          desc        = "Base repo for a new Ansible role"
+          is_template = true
+        }
+        ansible-role-git       = { desc = "Ansible role for managing Git client tooling" }
+        ansible-role-terraform = { desc = "Ansible role for managing Terraform and related tooling" }
+        ansible-role-kubetools = { desc = "Ansible role for managing Kubernetes client tooling" }
+        ansible-role-docker    = { desc = "Ansible role for managing Docker" }
       }
     }
   }
@@ -32,12 +38,12 @@ locals {
         }
       }
       ansible_roles = {
-        ansible-role-terraform        = "Ansible role for managing Terraform and related tooling"
-        ansible-role-vagrant          = "Ansible role for managing Vagrant"
-        ansible-role-zsh              = "Ansible role for managing zsh"
-        ansible-role-cryptominer      = "Ansible role for managing cryptominer"
-        ansible-role-k8s-certificates = "Ansible role for managing k8s-certificates"
-        ansible-role-k8s-node         = "Ansible role for managing Kubernetes nodes"
+        ansible-role-terraform        = { desc = "Ansible role for managing Terraform and related tooling" }
+        ansible-role-vagrant          = { desc = "Ansible role for managing Vagrant" }
+        ansible-role-zsh              = { desc = "Ansible role for managing zsh" }
+        ansible-role-cryptominer      = { desc = "Ansible role for managing cryptominer" }
+        ansible-role-k8s-certificates = { desc = "Ansible role for managing k8s-certificates" }
+        ansible-role-k8s-node         = { desc = "Ansible role for managing Kubernetes nodes" }
       }
       misc_projects = {
       }

@@ -13,3 +13,8 @@ variable "repo_desc" {
   description = "Description of repository to create"
   type        = string
 }
+
+variable "is_template" {
+  description = "Set to true to tell GitHub that this is a template repository."
+  default     = false
+}
