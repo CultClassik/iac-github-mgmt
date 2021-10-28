@@ -10,10 +10,11 @@ locals {
       }
       iac = {}
       ansible_roles = {
-        ansible-role-git       = "Ansible role for managing Git client tooling"
-        ansible-role-terraform = "Ansible role for managing Terraform and related tooling"
-        ansible-role-kubetools = "Ansible role for managing Kubernetes client tooling"
-        ansible-role-docker    = "Ansible role for managing Docker"
+        ansible-role-scaffolding = "Base repo for a new Ansible role"
+        ansible-role-git         = "Ansible role for managing Git client tooling"
+        ansible-role-terraform   = "Ansible role for managing Terraform and related tooling"
+        ansible-role-kubetools   = "Ansible role for managing Kubernetes client tooling"
+        ansible-role-docker      = "Ansible role for managing Docker"
       }
     }
   }
