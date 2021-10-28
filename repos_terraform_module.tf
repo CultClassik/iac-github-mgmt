@@ -14,5 +14,5 @@ module "diehlabs_terraform_module_repos" {
   source      = "./modules/github_repo"
   repo_name   = each.key
   repo_desc   = each.value.desc
-  is_template = try(each.value.is_template, true)
+  is_template = try(each.value.is_template, false)
 }

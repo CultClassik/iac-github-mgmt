@@ -5,11 +5,11 @@ locals {
   diehlabs = {
     repos = {
       tf_module = {
-        terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
         terraform-azurerm-linuxvm = {
           desc        = "Terraform module for a basic Azure Linux VM"
           is_template = true
         }
+        terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
       }
       iac = {}
       ansible_roles = {
