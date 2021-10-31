@@ -4,6 +4,7 @@ locals {
       tf_module = {
         terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
         terraform-azurerm-linuxvm = { desc = "Terraform module for creating a basic Linux VM in Azure" }
+        terraform-tls-k8scerts    = { desc = "Terraform module for creating TLS certificates for a Kubernetes cluster" }
       }
       iac = {
         pulumi-kube-sandbox = { desc = "Pulumi code for Kubernetes testins" }
