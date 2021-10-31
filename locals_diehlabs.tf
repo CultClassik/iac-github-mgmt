@@ -5,7 +5,9 @@ locals {
         terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
         terraform-azurerm-linuxvm = { desc = "Terraform module for creating a basic Linux VM in Azure" }
       }
-      iac = {}
+      iac = {
+        pulumi-kube-sandbox = { desc = "Pulumi code for Kubernetes testins" }
+      }
       ansible_roles = {
         ansible-role-scaffolding = {
           desc        = "Base repo for a new Ansible role"
