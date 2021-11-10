@@ -113,7 +113,7 @@ No outputs.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_tfe_token"></a> [tfe\_token](#input\_tfe\_token) | The TFCloud API Token | `string` | n/a | yes |
+| <a name="input_tfe_token"></a> [tfe\_token](#input\_tfe\_token) | The TFCloud API Token. Must be configured as a secret in Github for use by actions. | `string` | n/a | yes |
 
 ## Outputs
 

@@ -23,6 +23,10 @@ data "terraform_remote_state" "tfcloud" {
   }
 }
 
+# data "tfe_oauth_client" "github" {
+#   oauth_client_id = "9fbdf97210ba447e5d77"
+# }
+
 ###############
 # THIS REPO > #
 ###############

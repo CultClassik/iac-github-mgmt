@@ -2,11 +2,13 @@ locals {
   diehlabs = {
     repos = {
       tf_module = {
-        terraform-azurerm-o365dns = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
-        terraform-azurerm-linuxvm = { desc = "Terraform module for creating a basic Linux VM in Azure" }
+        terraform-azurerm-o365dns   = { desc = "Terraform module for creating DNS records in Azure DNS for Office 365" }
+        terraform-azurerm-linuxvm   = { desc = "Terraform module for creating a basic Linux VM in Azure" }
+        terraform-tls-k8scerts      = { desc = "Terraform module for creating TLS certificates for a Kubernetes cluster" }
+        terraform-azurerm-tanzu-nsg = { desc = "Terraform data only module for creating Tanzu NSG rules for management clusters" }
       }
       iac = {
-        pulumi-kube-sandbox = { desc = "Pulumi code for Kubernetes testins" }
+        pulumi-kube-sandbox = { desc = "Pulumi code for Kubernetes testing" }
       }
       ansible_roles = {
         ansible-role-scaffolding = {
