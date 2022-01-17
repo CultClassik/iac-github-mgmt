@@ -27,4 +27,4 @@ stages:
     stages:
       - stage: 
         workspace: terraform-github-mgmt
-        azdoApprovalEnvironment: production
+        azdo_approval_environment: production
