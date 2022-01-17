@@ -12,7 +12,7 @@ resources:
     - repository: templates
       type: github
       endpoint: "Github - Azure Pipelines"
-      name: CultClassik/azdo-terraform-pipeline-templates
+      name: CultClassik/azdo-private-tf-templates
       ref: refs/heads/main
 
 variables:
