@@ -1,2 +1,1 @@
-#github_token = "$(github_token)"
-tfe_token = "$(tfe_token)"
+repo_name = "$(BUILD_REPOSITORY_NAME)"
