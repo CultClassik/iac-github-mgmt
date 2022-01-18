@@ -7,8 +7,6 @@ locals {
     }
   }
   cultclassik_ansible_roles = {
-    ansible-role-terraform        = { desc = "Ansible role for managing Terraform and related tooling" }
-    ansible-role-vagrant          = { desc = "Ansible role for managing Vagrant" }
     ansible-role-zsh              = { desc = "Ansible role for managing zsh" }
     ansible-role-cryptominer      = { desc = "Ansible role for managing cryptominer" }
     ansible-role-k8s-certificates = { desc = "Ansible role for managing k8s-certificates" }
