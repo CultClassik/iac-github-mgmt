@@ -14,12 +14,15 @@ variable "repo_desc" {
   type        = string
 }
 
+variable "template" {
+  description = "Repo to use as a template"
+  type = object({
+    owner     = string
+    repo_name = string
+  })
+}
+
 variable "managed_by" {
   description = "Name of the Terraform repo that manages this resource"
   type        = string
-}
-
-variable "is_template" {
-  description = "Set to true to tell GitHub that this is a template repository."
-  default     = false
 }

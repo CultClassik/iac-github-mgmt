@@ -1,12 +1,4 @@
-variable "github_token" {
-  description = "The Github PAT"
+variable "repo_name" {
+  description = "The name on this Git repo. Used in descriptions of managed resources."
   type        = string
-  sensitive   = true
-  default     = null
-}
-
-variable "tfe_token" {
-  description = "The TFCloud API Token"
-  type        = string
-  sensitive   = true
 }
