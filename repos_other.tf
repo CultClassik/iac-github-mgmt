@@ -11,6 +11,6 @@ module "misc_project_repos" {
   for_each   = local.cultclassik_misc_projects
   source     = "./modules/github_repo"
   repo_name  = each.key
-  repo_desc  = each.value
+  repo_desc  = each.value.desc
   managed_by = local.managed_by
 }
