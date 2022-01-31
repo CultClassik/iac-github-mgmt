@@ -14,5 +14,6 @@ locals {
   }
   cultclassik_misc_projects = {
     py-tooling = { desc = "Various Python code I play with" }
+    my-dot-files = { desc = "Just my dot file stuff" }
   }
 }
