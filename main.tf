@@ -13,20 +13,21 @@ provider "tfe" {
 }
 
 ###############
-# THIS REPO > #
+# THIS REPO  (when it was located in github)> #
+# repo moved to azdo, resources removed from state, github repo has been archived
 ###############
-module "iac_github_mgmt" {
-  source     = "./modules/github_repo"
-  repo_name  = "iac-github-mgmt"
-  repo_desc  = "Manages Github resources"
-  managed_by = "${var.repo_name} (azdo)"
-}
+# module "iac_github_mgmt" {
+#   source     = "./modules/github_repo"
+#   repo_name  = "iac-github-mgmt"
+#   repo_desc  = "Manages Github resources"
+#   managed_by = "${var.repo_name} (azdo)"
+# }
 
-resource "github_actions_secret" "iac_github_mgmt_tftoken" {
-  repository      = "iac-github-mgmt"
-  secret_name     = "TF_API_TOKEN"
-  plaintext_value = data.vault_generic_secret.tfe_tokens.data.owners
-}
+# resource "github_actions_secret" "iac_github_mgmt_tftoken" {
+#   repository      = "iac-github-mgmt"
+#   secret_name     = "TF_API_TOKEN"
+#   plaintext_value = data.vault_generic_secret.tfe_tokens.data.owners
+# }
 
 # This resource now managed in terraform-github-mgmt in azure devops repos
 # resource "tfe_workspace" "iac_github_mgmt" {
