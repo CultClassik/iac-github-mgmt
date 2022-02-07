@@ -40,7 +40,7 @@ provider "tfe" {
 # < THIS REPO #
 ###############
 
-# shared and template workflows
+# starter workflow repo
 module "github_action_templates" {
   providers = {
     github = github.diehlabs
@@ -48,5 +48,16 @@ module "github_action_templates" {
   source     = "./modules/github_repo"
   repo_name  = ".github"
   repo_desc  = "Github Workflow Templates"
-  managed_by = "${var.repo_name} (azdo)"
+  managed_by = "${local.managed_by}"
+}
+
+# shared workflows repo
+module "github_workflow_templates" {
+  providers = {
+    github = github.diehlabs
+  }
+  source     = "./modules/github_repo"
+  repo_name  = "shared-workflows"
+  repo_desc  = "Github Workflow Templates"
+  managed_by = "${local.managed_by}"
 }
