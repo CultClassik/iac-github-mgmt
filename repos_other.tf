@@ -14,3 +14,11 @@ module "misc_project_repos" {
   repo_desc  = each.value.desc
   managed_by = local.managed_by
 }
+
+module "misc_project_repos_diehlabs" {
+  for_each   = local.diehlabs_misc_projects
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
+  repo_name  = each.key
+  repo_desc  = each.value.desc
+  managed_by = local.managed_by
+}
