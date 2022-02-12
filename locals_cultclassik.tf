@@ -13,7 +13,7 @@ locals {
     ansible-role-k8s-node         = { desc = "Ansible role for managing Kubernetes nodes" }
   }
   cultclassik_misc_projects = {
-    py-tooling = { desc = "Various Python code I play with" }
+    py-tooling   = { desc = "Various Python code I play with" }
     my-dot-files = { desc = "Just my dot file stuff" }
   }
 }
