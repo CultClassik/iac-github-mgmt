@@ -48,7 +48,7 @@ module "github_action_templates" {
   source     = "./modules/github_repo"
   repo_name  = ".github"
   repo_desc  = "Github Workflow Templates"
-  managed_by = "${local.managed_by}"
+  managed_by = local.managed_by
 }
 
 # shared workflows repo
@@ -59,5 +59,5 @@ module "github_workflow_templates" {
   source     = "./modules/github_repo"
   repo_name  = "shared-workflows"
   repo_desc  = "Github Workflow Templates"
-  managed_by = "${local.managed_by}"
+  managed_by = local.managed_by
 }

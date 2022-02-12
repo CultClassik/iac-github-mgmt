@@ -15,11 +15,12 @@ module "diehlabs_terraform_module_repos" {
   providers = {
     github = github.diehlabs
   }
-  for_each   = local.diehlabs_tf_module
-  source     = "./modules/github_repo_templated"
-  repo_name  = each.key
-  repo_desc  = each.value.desc
-  managed_by = local.managed_by
+  for_each     = local.diehlabs_tf_module
+  source       = "./modules/github_repo"
+  repo_name    = each.key
+  repo_desc    = each.value.desc
+  managed_by   = local.managed_by
+  use_template = true
   template = {
     owner     = "Diehlabs"
     repo_name = "terraform-module-scaffolding"
