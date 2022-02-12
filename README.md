@@ -98,6 +98,7 @@ No outputs.
 | <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | ./modules/github_repo | n/a |
 | <a name="module_github_workflow_templates"></a> [github\_workflow\_templates](#module\_github\_workflow\_templates) | ./modules/github_repo | n/a |
 | <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
+| <a name="module_misc_project_repos_diehlabs"></a> [misc\_project\_repos\_diehlabs](#module\_misc\_project\_repos\_diehlabs) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_terraform_module_repo_template"></a> [terraform\_module\_repo\_template](#module\_terraform\_module\_repo\_template) | ./modules/github_repo | n/a |
 
 ## Resources

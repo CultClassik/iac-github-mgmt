@@ -22,4 +22,10 @@ locals {
     ansible-role-vagrant   = { desc = "Ansible role for managing Vagrant" }
     ansible-role-unixuser  = { desc = "Ansible role for my user configuration" }
   }
+
+  diehlabs_misc_projects = {
+    toolbox          = { desc = "Scripts that I use to make me be more efficient" }
+    pre-commit-hooks = { desc = "Share pre-commit hooks" }
+  }
+
 }
