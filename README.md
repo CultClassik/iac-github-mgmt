@@ -90,14 +90,14 @@ No outputs.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_ansible_control"></a> [ansible\_control](#module\_ansible\_control) | ./modules/github_repo | n/a |
-| <a name="module_ansible_roles"></a> [ansible\_roles](#module\_ansible\_roles) | ./modules/github_repo | n/a |
+| <a name="module_ansible_roles"></a> [ansible\_roles](#module\_ansible\_roles) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_azdo_terraform_pipeline_templates"></a> [azdo\_terraform\_pipeline\_templates](#module\_azdo\_terraform\_pipeline\_templates) | ./modules/github_repo | n/a |
-| <a name="module_diehlabs_ansible_roles"></a> [diehlabs\_ansible\_roles](#module\_diehlabs\_ansible\_roles) | ./modules/github_repo | n/a |
-| <a name="module_diehlabs_iac_repos"></a> [diehlabs\_iac\_repos](#module\_diehlabs\_iac\_repos) | ./modules/github_repo | n/a |
-| <a name="module_diehlabs_terraform_module_repos"></a> [diehlabs\_terraform\_module\_repos](#module\_diehlabs\_terraform\_module\_repos) | ./modules/github_repo | n/a |
+| <a name="module_diehlabs_ansible_roles"></a> [diehlabs\_ansible\_roles](#module\_diehlabs\_ansible\_roles) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
+| <a name="module_diehlabs_iac_repos"></a> [diehlabs\_iac\_repos](#module\_diehlabs\_iac\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
+| <a name="module_diehlabs_terraform_module_repos"></a> [diehlabs\_terraform\_module\_repos](#module\_diehlabs\_terraform\_module\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | ./modules/github_repo | n/a |
 | <a name="module_github_workflow_templates"></a> [github\_workflow\_templates](#module\_github\_workflow\_templates) | ./modules/github_repo | n/a |
-| <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | ./modules/github_repo | n/a |
+| <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_terraform_module_repo_template"></a> [terraform\_module\_repo\_template](#module\_terraform\_module\_repo\_template) | ./modules/github_repo | n/a |
 
 ## Resources
