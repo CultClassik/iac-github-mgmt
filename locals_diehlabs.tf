@@ -24,7 +24,7 @@ locals {
   }
 
   diehlabs_misc_projects = {
-    toolbox          = { desc = "Scripts that I use to make me be more efficient" }
+    toolbox          = { desc = "Things that I use to help me be more efficient" }
     pre-commit-hooks = { desc = "Share pre-commit hooks" }
   }
 

@@ -16,6 +16,9 @@ module "misc_project_repos" {
 }
 
 module "misc_project_repos_diehlabs" {
+  providers = {
+    github = github.diehlabs
+  }
   for_each   = local.diehlabs_misc_projects
   source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = each.key

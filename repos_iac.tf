@@ -1,11 +1,11 @@
-# iac repos - personal
-# module "iac_repos" {
-#   for_each   = local.cultclassik_iac
-#   source     = "./modules/github_repo"
-#   repo_name  = each.key
-#   repo_desc  = each.value.desc
-#   managed_by = "${var.repo_name} (azdo)"
-# }
+# iac repos - CultClassik
+module "iac_repos" {
+  for_each   = local.cultclassik_iac
+  source     = "./modules/github_repo"
+  repo_name  = each.key
+  repo_desc  = each.value.desc
+  managed_by = local.managed_by
+}
 
 # iac repos - diehlabs org
 module "diehlabs_iac_repos" {

@@ -2,9 +2,10 @@ locals {
   cultclassik_iac = {
     #iac-github-mgmt = "Manages Github resources" # this is managed on it's own in main.tf, since it's this actual repo
     iac-azure-resources = {
-      # desc = "Terraform code to manage Azure resources",
+      desc = "Terraform code to manage Azure resources"
       # exec = "local"
     }
+    terraform-azure-resources = { desc = "Multiple Terraform configurations for managing resources an Azure" }
   }
   cultclassik_ansible_roles = {
     ansible-role-zsh              = { desc = "Ansible role for managing zsh" }
