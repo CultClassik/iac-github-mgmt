@@ -1,6 +1,6 @@
 # azure pipelines templates for terraform
 module "azdo_terraform_pipeline_templates" {
-  source     = "./modules/github_repo"
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = "azdo-terraform-pipeline-templates"
   repo_desc  = "Azure Pipelines template repo for Terraform pipelines"
   managed_by = local.managed_by

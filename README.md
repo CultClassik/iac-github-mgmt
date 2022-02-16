@@ -27,30 +27,32 @@ Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
 |------|---------|
 | <a name="provider_github"></a> [github](#provider\_github) | 4.20.0 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.28.1 |
 | <a name="provider_vault"></a> [vault](#provider\_vault) | 3.2.1 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ansible_control"></a> [ansible\_control](#module\_ansible\_control) | ./modules/github_repo | n/a |
+| <a name="module_ansible_control"></a> [ansible\_control](#module\_ansible\_control) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_ansible_roles"></a> [ansible\_roles](#module\_ansible\_roles) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
-| <a name="module_azdo_terraform_pipeline_templates"></a> [azdo\_terraform\_pipeline\_templates](#module\_azdo\_terraform\_pipeline\_templates) | ./modules/github_repo | n/a |
+| <a name="module_azdo_terraform_pipeline_templates"></a> [azdo\_terraform\_pipeline\_templates](#module\_azdo\_terraform\_pipeline\_templates) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_diehlabs_ansible_roles"></a> [diehlabs\_ansible\_roles](#module\_diehlabs\_ansible\_roles) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_diehlabs_iac_repos"></a> [diehlabs\_iac\_repos](#module\_diehlabs\_iac\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_diehlabs_terraform_module_repos"></a> [diehlabs\_terraform\_module\_repos](#module\_diehlabs\_terraform\_module\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
-| <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | ./modules/github_repo | n/a |
-| <a name="module_github_workflow_templates"></a> [github\_workflow\_templates](#module\_github\_workflow\_templates) | ./modules/github_repo | n/a |
-| <a name="module_iac_repos"></a> [iac\_repos](#module\_iac\_repos) | ./modules/github_repo | n/a |
+| <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
+| <a name="module_github_workflow_templates"></a> [github\_workflow\_templates](#module\_github\_workflow\_templates) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
+| <a name="module_iac_repos"></a> [iac\_repos](#module\_iac\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 | <a name="module_misc_project_repos_diehlabs"></a> [misc\_project\_repos\_diehlabs](#module\_misc\_project\_repos\_diehlabs) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
-| <a name="module_terraform_module_repo_template"></a> [terraform\_module\_repo\_template](#module\_terraform\_module\_repo\_template) | ./modules/github_repo | n/a |
+| <a name="module_terraform_module_repo_template"></a> [terraform\_module\_repo\_template](#module\_terraform\_module\_repo\_template) | git::https://github.com/Diehlabs/terraform-github-repo.git | tags/v0.0.2 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [github_user_ssh_key.ssh_key_cultclassik](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/user_ssh_key) | resource |
+| [tfe_workspace.iac_ws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [terraform_remote_state.vault_mgmt](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [vault_generic_secret.github_token](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 | [vault_generic_secret.ssh](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |

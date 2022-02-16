@@ -1,7 +1,7 @@
 # iac repos - CultClassik
 module "iac_repos" {
   for_each   = local.cultclassik_iac
-  source     = "./modules/github_repo"
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = each.key
   repo_desc  = each.value.desc
   managed_by = local.managed_by
@@ -28,11 +28,11 @@ module "diehlabs_iac_repos" {
 # }
 
 # terraform cloud workspaces
-# resource "tfe_workspace" "iac_ws" {
-#   for_each       = local.cultclassik_iac
-#   name           = each.key
-#   description    = "${each.value.desc} - Managed by Terraform repo ${local.managed_by}"
-#   organization   = "Diehlabs"
-#   execution_mode = each.value.exec
-#   tag_names      = ["prod"]
-# }
+resource "tfe_workspace" "iac_ws" {
+  for_each       = local.cultclassik_iac
+  name           = each.key
+  description    = "${each.value.desc} - Managed by Terraform repo ${local.managed_by}"
+  organization   = "Diehlabs"
+  execution_mode = each.value.exec
+  tag_names      = ["prod"]
+}
