@@ -96,7 +96,7 @@ No outputs.
 | <a name="module_diehlabs_iac_repos"></a> [diehlabs\_iac\_repos](#module\_diehlabs\_iac\_repos) | ./modules/github_repo | n/a |
 | <a name="module_diehlabs_terraform_module_repos"></a> [diehlabs\_terraform\_module\_repos](#module\_diehlabs\_terraform\_module\_repos) | ./modules/github_repo_templated | n/a |
 | <a name="module_github_action_templates"></a> [github\_action\_templates](#module\_github\_action\_templates) | ./modules/github_repo | n/a |
-| <a name="module_iac_github_mgmt"></a> [iac\_github\_mgmt](#module\_iac\_github\_mgmt) | ./modules/github_repo | n/a |
+| <a name="module_iac_repos"></a> [iac\_repos](#module\_iac\_repos) | ./modules/github_repo | n/a |
 | <a name="module_misc_project_repos"></a> [misc\_project\_repos](#module\_misc\_project\_repos) | ./modules/github_repo | n/a |
 | <a name="module_terraform_module_repo_template"></a> [terraform\_module\_repo\_template](#module\_terraform\_module\_repo\_template) | ./modules/github_repo | n/a |
 
@@ -104,7 +104,6 @@ No outputs.
 
 | Name | Type |
 |------|------|
-| [github_actions_secret.iac_github_mgmt_tftoken](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_user_ssh_key.ssh_key_cultclassik](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/user_ssh_key) | resource |
 | [terraform_remote_state.vault_mgmt](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [vault_generic_secret.github_token](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
