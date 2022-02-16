@@ -4,6 +4,7 @@ locals {
     terraform-github-repo     = { desc = "Terraform module for managing Github repositories" }
     terraform-azurerm-linuxvm = { desc = "Terraform module for managing a basic Linux VM in Azure" }
     terraform-tls-k8scerts    = { desc = "Terraform module for managing TLS certificates for a Kubernetes cluster" }
+    terraform-tfe-workspaces  = { desc = "Terraform module for managing workspaces in TFE/TFC" }
   }
   diehlabs_iac = {
     pulumi-kube-sandbox          = { desc = "Pulumi code for Kubernetes testins" }

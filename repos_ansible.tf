@@ -1,5 +1,5 @@
 module "ansible_control" {
-  source     = "./modules/github_repo"
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = "ansible-control"
   repo_desc  = "Ansible role for managing hosts using Ansible"
   managed_by = local.managed_by

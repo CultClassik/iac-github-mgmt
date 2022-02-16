@@ -17,7 +17,7 @@ provider "tfe" {
 # repo moved to azdo, resources removed from state, github repo has been archived
 ###############
 # module "iac_github_mgmt" {
-#   source     = "./modules/github_repo"
+#   source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
 #   repo_name  = "iac-github-mgmt"
 #   repo_desc  = "Manages Github resources"
 #   managed_by = "${var.repo_name} (azdo)"
@@ -45,7 +45,7 @@ module "github_action_templates" {
   providers = {
     github = github.diehlabs
   }
-  source     = "./modules/github_repo"
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = ".github"
   repo_desc  = "Github Workflow Templates"
   managed_by = local.managed_by
@@ -56,7 +56,7 @@ module "github_workflow_templates" {
   providers = {
     github = github.diehlabs
   }
-  source     = "./modules/github_repo"
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name  = "shared-workflows"
   repo_desc  = "Github Workflow Templates"
   managed_by = local.managed_by

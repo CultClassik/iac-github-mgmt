@@ -3,7 +3,7 @@ module "terraform_module_repo_template" {
   providers = {
     github = github.diehlabs
   }
-  source      = "./modules/github_repo"
+  source      = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
   repo_name   = "terraform-module-scaffolding"
   repo_desc   = "Base repo for a new Terraform module"
   managed_by  = local.managed_by
