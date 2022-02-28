@@ -26,6 +26,7 @@ Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
 | Name | Version |
 |------|---------|
 | <a name="provider_github"></a> [github](#provider\_github) | 4.20.0 |
+| <a name="provider_github.diehlabs"></a> [github.diehlabs](#provider\_github.diehlabs) | 4.20.0 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 | <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.28.1 |
 | <a name="provider_vault"></a> [vault](#provider\_vault) | 3.2.1 |
@@ -51,10 +52,15 @@ Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
 
 | Name | Type |
 |------|------|
+| [github_actions_organization_secret.gh_arm_client_id](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_organization_secret) | resource |
+| [github_actions_organization_secret.gh_arm_client_secret](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_organization_secret) | resource |
+| [github_actions_organization_secret.gh_arm_sub_id](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_organization_secret) | resource |
+| [github_actions_organization_secret.gh_arm_tenant_id](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_organization_secret) | resource |
 | [github_user_ssh_key.ssh_key_cultclassik](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/user_ssh_key) | resource |
 | [tfe_workspace.iac_ws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [terraform_remote_state.vault_mgmt](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [vault_generic_secret.github_token](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
+| [vault_generic_secret.spn_terraform](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 | [vault_generic_secret.ssh](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 | [vault_generic_secret.tfe_tokens](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret) | data source |
 
