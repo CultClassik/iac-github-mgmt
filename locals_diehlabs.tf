@@ -4,6 +4,7 @@ locals {
     terraform-github-repo     = { desc = "Terraform module for managing Github repositories" }
     terraform-azurerm-linuxvm = { desc = "Terraform module for managing a basic Linux VM in Azure" }
     terraform-tls-k8scerts    = { desc = "Terraform module for managing TLS certificates for a Kubernetes cluster" }
+    terraform-tfe-workspaces  = { desc = "Terraform module for managing workspaces in TFE/TFC" }
   }
   diehlabs_iac = {
     pulumi-kube-sandbox          = { desc = "Pulumi code for Kubernetes testins" }
@@ -24,7 +25,7 @@ locals {
   }
 
   diehlabs_misc_projects = {
-    toolbox          = { desc = "Scripts that I use to make me be more efficient" }
+    toolbox          = { desc = "Things that I use to help me be more efficient" }
     pre-commit-hooks = { desc = "Share pre-commit hooks" }
   }
 

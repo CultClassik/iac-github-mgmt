@@ -12,7 +12,7 @@ repos:
     - id: end-of-file-fixer
 
 - repo: https://github.com/gruntwork-io/pre-commit
-  rev: v0.1.16 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  rev: v0.1.17
   hooks:
     - id: tflint
       args:
