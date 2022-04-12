@@ -16,15 +16,12 @@ resources:
       ref: refs/heads/main
 
 variables:
-# - name: tflint_version
-#   value: 0.34.1
 - name: tf_cli_version
-  value: 1.1.6
+  value: 1.1.8
 
 stages:
 - template: stages-terraform-infra.yml@templates
   parameters:
     stages:
-      - stage:
-        workspace: terraform-github-mgmt
+      - workspace: terraform-github-mgmt
         azdo_approval_environment: production
