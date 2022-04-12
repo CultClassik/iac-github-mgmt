@@ -28,6 +28,7 @@ locals {
   diehlabs_misc_projects = {
     toolbox          = { desc = "Things that I use to help me be more efficient" }
     pre-commit-hooks = { desc = "Share pre-commit hooks" }
+    terrahelpers     = { desc = "Go package for Terratest helper functions" }
   }
 
 }
