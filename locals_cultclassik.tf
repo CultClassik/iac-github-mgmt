@@ -17,8 +17,8 @@ locals {
     ansible-role-k8s-node         = { desc = "Ansible role for managing Kubernetes nodes" }
   }
   cultclassik_misc_projects = {
-    k8s-my-way   = { desc = "Based on Kubernetes the hard way, my way" }
-    py-tooling   = { desc = "Various Python code I play with" }
-    my-dot-files = { desc = "Just my dot file stuff" }
+    kubernetes-my-way = { desc = "Based on Kubernetes the hard way, my way" }
+    py-tooling        = { desc = "Various Python code I play with" }
+    my-dot-files      = { desc = "Just my dot file stuff" }
   }
 }
