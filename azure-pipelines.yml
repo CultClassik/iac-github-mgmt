@@ -17,7 +17,7 @@ resources:
 
 variables:
 - name: tf_cli_version
-  value: 1.1.8
+  value: '1.1.9'
 
 stages:
 - template: stages-terraform-infra.yml@templates

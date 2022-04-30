@@ -3,7 +3,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "~> 4.20.0"
+      version = "~> 4.24.0"
     }
     tfe = {
       source  = "hashicorp/tfe"
@@ -11,7 +11,7 @@ terraform {
     }
     vault = {
       source  = "hashicorp/vault"
-      version = "~> 3.2.0"
+      version = "~> 3.3.0"
     }
   }
 }

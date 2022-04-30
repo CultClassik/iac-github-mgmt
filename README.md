@@ -8,6 +8,11 @@ Two secrets must be set in the repository:
 * GH_API_TOKEN
 * TF_API_TOKEN
 
+## Importing
+Github:
+1. repo: `terraform import 'module.misc_project_repos["my-repo"].github_repository.repo' my-repo`
+2. branch default `terraform import 'module.misc_project_repos["my-repo"].github_branch_default.default' my-repo`
+
 ## TODO
 Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
 
@@ -17,19 +22,19 @@ Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.20.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.24.0 |
 | <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.28.0 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 3.2.0 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 3.3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | 4.20.0 |
-| <a name="provider_github.diehlabs"></a> [github.diehlabs](#provider\_github.diehlabs) | 4.20.0 |
+| <a name="provider_github"></a> [github](#provider\_github) | 4.24.1 |
+| <a name="provider_github.diehlabs"></a> [github.diehlabs](#provider\_github.diehlabs) | 4.24.1 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 | <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.28.1 |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | 3.2.1 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 3.3.1 |
 
 ## Modules
 
