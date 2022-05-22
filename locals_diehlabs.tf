@@ -7,6 +7,9 @@ locals {
     terraform-tls-private-ca-certs = { desc = "Terraform module for creating a private CA and server sertificates" }
     terraform-tfe-workspaces       = { desc = "Terraform module for managing workspaces in TFE/TFC" }
     terraform-azurerm-vmss         = { desc = "Terraform module for a VM scale set in Azure" }
+    terraform-azurerm-aks          = { desc = "Terraform module for a AKS cluster in Azure" }
+    terraform-azurerm-storageacct  = { desc = "Terraform module for a VM scale set in Azure" }
+    terraform-azurerm-akv          = { desc = "Terraform module for a VM scale set in Azure" }
   }
   diehlabs_iac = {
     pulumi-kube-sandbox          = { desc = "Pulumi code for Kubernetes testins" }
@@ -27,8 +30,7 @@ locals {
   }
 
   diehlabs_misc_projects = {
-    toolbox          = { desc = "Things that I use to help me be more efficient" }
-    pre-commit-hooks = { desc = "Share pre-commit hooks" }
+    pre-commit-hooks = { desc = "Shared pre-commit hooks" }
     terrahelpers     = { desc = "Go package for Terratest helper functions" }
   }
 
