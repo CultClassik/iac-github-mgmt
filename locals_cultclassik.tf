@@ -20,5 +20,6 @@ locals {
     kubernetes-my-way = { desc = "Based on Kubernetes the hard way, my way" }
     py-tooling        = { desc = "Various Python code I play with" }
     my-dot-files      = { desc = "Just my dot file stuff" }
+    toolbox           = { desc = "Things that I use to help me be more efficient" }
   }
 }
