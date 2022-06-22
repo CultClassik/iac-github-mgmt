@@ -32,6 +32,7 @@ locals {
   diehlabs_misc_projects = {
     pre-commit-hooks = { desc = "Shared pre-commit hooks" }
     terrahelpers     = { desc = "Go package for Terratest helper functions" }
+    go-builder       = { desc = "Go container for building Go projects and more" }
   }
 
 }
