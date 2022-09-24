@@ -1,27 +1,27 @@
 provider "github" {
-  token = data.vault_generic_secret.github_token.data.token
+  token = var.gh_token
 }
 
 provider "github" {
   alias = "diehlabs"
   owner = "Diehlabs"
-  token = data.vault_generic_secret.github_token.data.token
+  token = var.gh_token
 }
 
 provider "tfe" {
-  token = data.vault_generic_secret.tfe_tokens.data.owners
+  token = var.tf_token
 }
 
 ###############
 # THIS REPO  (when it was located in github)> #
 # repo moved to azdo, resources removed from state, github repo has been archived
 ###############
-# module "iac_github_mgmt" {
-#   source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
-#   repo_name  = "iac-github-mgmt"
-#   repo_desc  = "Manages Github resources"
-#   managed_by = "${var.repo_name} (azdo)"
-# }
+module "iac_github_mgmt" {
+  source     = "git::https://github.com/Diehlabs/terraform-github-repo.git?ref=tags/v0.0.2"
+  repo_name  = "iac-github-mgmt"
+  repo_desc  = "Manages Github resources"
+  managed_by = local.managed_by
+}
 
 # resource "github_actions_secret" "iac_github_mgmt_tftoken" {
 #   repository      = "iac-github-mgmt"

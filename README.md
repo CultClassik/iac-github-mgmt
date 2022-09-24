@@ -3,6 +3,8 @@
 
 Manages my personal Github resources.
 
+Entrypoint for Github.
+
 ## Secrets
 Two secrets must be set in the repository:
 * GH_API_TOKEN
@@ -14,7 +16,8 @@ Github:
 2. branch default `terraform import 'module.misc_project_repos["my-repo"].github_branch_default.default' my-repo`
 
 ## TODO
-Configure pipeline to utilize Vault to obtain secrets and dynamic TFC token.
+After migration back to github on 9/24/22, re-add github workflow.
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
