@@ -14,3 +14,4 @@ jobs:
     uses: Diehlabs/shared-workflows/.github/workflows/terraform-local.yml@v0.1.0
     with:
       tf_version: '1.2.9'
+      tfe_token: ${{ secrets.TF_API_TOKEN }}
