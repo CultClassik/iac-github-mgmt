@@ -35,6 +35,11 @@ locals {
       name = "toolbox"
       desc = "Things that I use to help me be more efficient"
     }
+    repo_0006 = {
+      name       = "ansible-control"
+      desc       = "Ansible role for managing hosts using Ansible"
+      visibility = "private"
+    }
   }
 
   repos_cultclasik_iac = {

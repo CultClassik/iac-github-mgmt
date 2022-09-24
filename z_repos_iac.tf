@@ -8,11 +8,3 @@ module "diehlabs_iac_repos" {
   repo_desc  = each.value.desc
   managed_by = local.managed_by
 }
-
-# iac repo secrets
-# resource "github_actions_secret" "tf_api_token" {
-#   for_each        = local.cultclassik_iac
-#   repository      = each.key
-#   secret_name     = "TF_API_TOKEN"
-#   plaintext_value = data.vault_generic_secret.tfe_tokens.data.owners
-# }

@@ -10,10 +10,11 @@ module "repos" {
   is_template  = try(each.value.is_template, false)
   use_template = try(each.value.use_template, false)
   template     = try(each.value.template, null)
+  visibility   = try(each.value.visibility, "public")
 }
 
 # -----------------------------------------------------------------------------
-# UPDATE THIS TO USE OUTPUTS FROM GITHUB REPO MODULE
+# Optionally create a TFE worksapce for each repo
 # -----------------------------------------------------------------------------
 resource "tfe_workspace" "ws" {
   for_each       = toset(local.workspaces)
