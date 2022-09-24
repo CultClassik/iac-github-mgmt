@@ -5,8 +5,8 @@ locals {
       desc = "Terraform code to manage Azure resources"
       exec = "local"
     }
-    terraform-azure-resources = {
-      desc = "Multiple Terraform configurations for managing resources an Azure"
+    iac-azure-aks = {
+      desc = "Sandbox for ArgoCD managed AKS cluster"
       exec = "local"
     }
   }
@@ -20,5 +20,7 @@ locals {
     kubernetes-my-way = { desc = "Based on Kubernetes the hard way, my way" }
     py-tooling        = { desc = "Various Python code I play with" }
     toolbox           = { desc = "Things that I use to help me be more efficient" }
+    gitops-apps       = { desc = "ArgoCD applications for a Kubernetes cluster" }
+    gitops-cm         = { desc = "ArgoCD configuration managements for a Kubernetes cluster" }
   }
 }

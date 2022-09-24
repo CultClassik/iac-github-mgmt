@@ -10,6 +10,7 @@ locals {
     terraform-azurerm-aks          = { desc = "Terraform module for a AKS cluster in Azure" }
     terraform-azurerm-storageacct  = { desc = "Terraform module for a VM scale set in Azure" }
     terraform-azurerm-akv          = { desc = "Terraform module for a VM scale set in Azure" }
+    terraform-gitlab-config        = { desc = "Terraform module for Gitlab configuration" }
   }
   diehlabs_iac = {
     pulumi-kube-sandbox          = { desc = "Pulumi code for Kubernetes testins" }

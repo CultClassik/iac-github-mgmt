@@ -1,0 +1,16 @@
+name: Ansible CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  default:
+    uses: Diehlabs/shared-workflows/.github/workflows/terraform-local.yml@v0.1.0
+    with:
+      tf_version: '1.2.9'
