@@ -1,5 +1,5 @@
 locals {
-  cultclassik_iac = {}
+
   cultclassik_ansible_roles = {
     ansible-role-zsh              = { desc = "Ansible role for managing zsh" }
     ansible-role-cryptominer      = { desc = "Ansible role for managing cryptominer" }

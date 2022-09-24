@@ -18,6 +18,19 @@ Github:
 ## TODO
 After migration back to github on 9/24/22, re-add github workflow.
 
+Moving to new module
+```bash
+
+# Diehlabs ONLY
+terraform state mv 'module.misc_project_repos_diehlabs["pre-commit-hooks"].data.github_branch.main' 'module.diehlabs_repos.module.repos["repo_0001"].data.github_branch.main' &&\
+terraform state mv 'module.misc_project_repos_diehlabs["pre-commit-hooks"].github_branch_default.default' 'module.diehlabs_repos.module.repos["repo_0001"].github_branch_default.default' &&\
+terraform state mv 'module.misc_project_repos_diehlabs["pre-commit-hooks"].github_repository.repo' 'module.diehlabs_repos.module.repos["repo_0001"].github_repository.repo'
+
+# CultClassik ONLY
+terraform state mv 'module.misc_project_repos["kubernetes-my-way"].data.github_branch.main' 'module.cultclassik_repos.module.repos["repo_0003"].data.github_branch.main' &&\
+terraform state mv 'module.misc_project_repos["kubernetes-my-way"].github_branch_default.default' 'module.cultclassik_repos.module.repos["repo_0003"].github_branch_default.default' &&\
+terraform state mv 'module.misc_project_repos["kubernetes-my-way"].github_repository.repo' 'module.cultclassik_repos.module.repos["repo_0003"].github_repository.repo'
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

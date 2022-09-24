@@ -57,10 +57,3 @@ locals {
     }
   }
 }
-
-
-
-# terraform state mv 'module.misc_project_repos["kubernetes-my-way"].data.github_branch.main' 'module.cultclassik_repos.module.repos["repo_0003"].data.github_branch.main' &&\
-# terraform state mv 'module.misc_project_repos["kubernetes-my-way"].github_branch_default.default' 'module.cultclassik_repos.module.repos["repo_0003"].github_branch_default.default' &&\
-# terraform state mv 'module.misc_project_repos["kubernetes-my-way"].github_repository.repo' 'module.cultclassik_repos.module.repos["repo_0003"].github_repository.repo'
-
