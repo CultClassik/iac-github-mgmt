@@ -10,6 +10,7 @@ module "diehlabs_repos" {
   repos = merge(
     local.repos_diehlabs,
     local.repos_diehlabs_ansible_roles,
+    local.repos_terraform_modules,
   )
 }
 
@@ -78,4 +79,78 @@ locals {
     }
   }
 
+  # -----------------------------------------------------------------------------
+  # Terraform module repos
+  # -----------------------------------------------------------------------------
+  repos_terraform_modules = { for k, v in local.repos_diehlabs_tfmod : k =>
+    merge(v,
+      {
+        use_template = true
+        template = {
+          owner     = "Diehlabs"
+          repo_name = "terraform-module-scaffolding"
+        }
+      }
+    )
+  }
+  repos_diehlabs_tfmod = {
+    repo_tfmod_0000 = {
+      name        = "terraform-module-scaffolding"
+      desc        = "Base repo for a new Terraform module"
+      is_template = true
+    }
+    repo_tfmod_0001 = {
+      name = "terraform-azurerm-o365dns"
+      desc = "Terraform module for managing DNS records in Azure DNS for Office 365"
+    }
+    repo_tfmod_0002 = {
+      name = "terraform-github-repo"
+      desc = "Terraform module for managing Github repositories"
+    }
+    repo_tfmod_0003 = {
+      name = "terraform-azurerm-linuxvm"
+      desc = "Terraform module for managing a basic Linux VM in Azure"
+    }
+
+    repo_tfmod_0004 = {
+      name = "terraform-tls-k8scerts"
+      desc = "Terraform module for managing TLS certificates for a Kubernetes cluster"
+    }
+    repo_tfmod_0005 = {
+      name = "terraform-tls-private-ca-certs"
+      desc = "Terraform module for creating a private CA and server sertificates"
+    }
+    repo_tfmod_0006 = {
+      name = "terraform-tfe-workspaces"
+      desc = "Terraform module for managing workspaces in TFE/TFC"
+    }
+    repo_tfmod_0007 = {
+      name = "terraform-azurerm-vmss"
+      desc = "Terraform module for a VM scale set in Azure"
+    }
+    repo_tfmod_0008 = {
+      name = "terraform-azurerm-aks"
+      desc = "Terraform module for a AKS cluster in Azure"
+    }
+    repo_tfmod_0009 = {
+      name = "terraform-azurerm-storageacct"
+      desc = "Terraform module for a storage account in Azure"
+    }
+    repo_tfmod_0010 = {
+      name = "terraform-azurerm-akv"
+      desc = "Terraform module for a keyvault in Azure"
+    }
+    repo_tfmod_0011 = {
+      name = "terraform-gitlab-config"
+      desc = "Terraform module for Gitlab configuration"
+    }
+
+  }
+
+
 }
+
+# repo_tfmod_000 = {
+#   name         = ""
+#   desc         = 
+# }
