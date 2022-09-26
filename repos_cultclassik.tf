@@ -60,5 +60,14 @@ locals {
       tfe_org       = "Diehlabs"
       tfe_tags      = ["sandbox"]
     }
+    iac_repo_0003 = {
+      name          = "iac-gitlab-config"
+      desc          = "Terraform module for Gitlab configuration"
+      tfe_workspace = true
+      tfe_exec_mode = "local"
+      tfe_org       = "Diehlabs"
+      tfe_tags      = ["production"]
+
+    }
   }
 }

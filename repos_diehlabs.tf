@@ -11,6 +11,7 @@ module "diehlabs_repos" {
     local.repos_diehlabs,
     local.repos_diehlabs_ansible_roles,
     local.repos_terraform_modules,
+    local.repos_diehlabs_templates,
   )
 }
 
@@ -34,17 +35,30 @@ locals {
       name = "go-builder"
       desc = "Go container for building Go projects and more"
     }
+
+  }
+
+  # -----------------------------------------------------------------------------
+  # Template repositories
+  # -----------------------------------------------------------------------------
+  repos_diehlabs_templates = {
+    repo_template_0001 = {
+      name        = "ansible-role-scaffolding"
+      desc        = "Base repo for a new Ansible role"
+      is_template = true
+    }
+    repo_template_0002 = {
+      name        = "terraform-module-scaffolding"
+      desc        = "Base repo for a new Terraform module"
+      is_template = true
+    }
   }
 
   # -----------------------------------------------------------------------------
   # Ansible role repos
   # -----------------------------------------------------------------------------
   repos_diehlabs_ansible_roles = {
-    repo_ansible_role_0000 = {
-      name        = "ansible-role-scaffolding"
-      desc        = "Base repo for a new Ansible role"
-      is_template = true
-    }
+
     repo_ansible_role_0001 = {
       name = "ansible-role-k8s-certificates"
       desc = "Ansible role for managing k8s-certificates"
@@ -94,11 +108,6 @@ locals {
     )
   }
   repos_diehlabs_tfmod = {
-    repo_tfmod_0000 = {
-      name        = "terraform-module-scaffolding"
-      desc        = "Base repo for a new Terraform module"
-      is_template = true
-    }
     repo_tfmod_0001 = {
       name = "terraform-azurerm-o365dns"
       desc = "Terraform module for managing DNS records in Azure DNS for Office 365"
@@ -142,15 +151,10 @@ locals {
     }
     repo_tfmod_0011 = {
       name = "terraform-gitlab-config"
-      desc = "Terraform module for Gitlab configuration"
+      desc = "Terraform module for a Gitlab configuration"
     }
 
   }
 
 
 }
-
-# repo_tfmod_000 = {
-#   name         = ""
-#   desc         = 
-# }
