@@ -154,6 +154,16 @@ locals {
       desc = "Terraform module for a Gitlab configuration"
     }
 
+    repo_tfmod_0012 = {
+      name = "terraform-azure-dns-records"
+      desc = "Terraform module for managing Azure DNS records"
+    }
+
+    repo_tfmod_0013 = {
+      name = "terraform-dns-zone"
+      desc = "Terraform module for managing an Azure DNS zone"
+    }
+
   }
 
 
