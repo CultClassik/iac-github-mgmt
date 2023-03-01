@@ -61,7 +61,7 @@ locals {
       tfe_tags      = ["sandbox"]
     }
 
-    iac_repo_0003 = {
+    iac_repo_0005 = {
       name          = "iac-azure-vault-cluster"
       desc          = "Terraform code for managing a HashiCorp Vault cluster on Azure"
       tfe_workspace = true
