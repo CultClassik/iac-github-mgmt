@@ -60,14 +60,33 @@ locals {
       tfe_org       = "Diehlabs"
       tfe_tags      = ["sandbox"]
     }
+
     iac_repo_0003 = {
-      name          = "iac-gitlab-config"
-      desc          = "Terraform module for Gitlab configuration"
+      name          = "iac-azure-vault-cluster"
+      desc          = "Terraform code for managing a HashiCorp Vault cluster on Azure"
       tfe_workspace = true
       tfe_exec_mode = "local"
       tfe_org       = "Diehlabs"
-      tfe_tags      = ["production"]
-
+      tfe_tags      = ["sandbox"]
     }
+
+    iac_repo_0004 = {
+      name          = "iac-azure-vault-cluster-components"
+      desc          = "Terraform code for managing required resources for a HashiCorp Vault cluster on Azure"
+      tfe_workspace = true
+      tfe_exec_mode = "local"
+      tfe_org       = "Diehlabs"
+      tfe_tags      = ["sandbox"]
+    }
+
+    iac_repo_0003 = {
+      name          = "iac-azure-agw"
+      desc          = "Terraform code for managing Azure Application Gatways"
+      tfe_workspace = true
+      tfe_exec_mode = "local"
+      tfe_org       = "Diehlabs"
+      tfe_tags      = ["sandbox"]
+    }
+
   }
 }
