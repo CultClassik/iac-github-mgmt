@@ -40,10 +40,7 @@ locals {
       desc       = "Ansible role for managing hosts using Ansible"
       visibility = "private"
     }
-    repo_vbox01 = {
-      name       = "vagrant-local-linux"
-      desc       = "Manages local Vagrant/VBox VM"
-    }
+
   }
 
   repos_cultclasik_iac = {
