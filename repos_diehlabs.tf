@@ -164,6 +164,11 @@ locals {
       desc = "Terraform module for managing an Azure DNS zone"
     }
 
+    repo_tfmod_0014 = {
+      name = "terraform-aws-homeassistant-alexa-skill"
+      desc = "Terraform module for managing an AWS Home Assistant Alexa Skill lambda function"
+    }
+
   }
 
 

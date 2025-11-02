@@ -40,7 +40,11 @@ locals {
       desc       = "Ansible role for managing hosts using Ansible"
       visibility = "private"
     }
-
+    repo_0007 = {
+      name       = "home-stacks"
+      desc       = "Docker stacks I need"
+      visibility = "private"
+    }
   }
 
   repos_cultclasik_iac = {
