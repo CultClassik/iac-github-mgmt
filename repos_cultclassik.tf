@@ -45,6 +45,12 @@ locals {
       desc       = "Docker stacks I need"
       visibility = "private"
     }
+
+    repo_0008 = {
+      name       = "esp32-clock"
+      desc       = "ESP32 based clock code"
+      visibility = "public"
+    }
   }
 
   repos_cultclasik_iac = {
